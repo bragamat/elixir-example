@@ -14,6 +14,7 @@ defmodule UnstoreWeb.ChannelCase do
   """
 
   use ExUnit.CaseTemplate
+  alias Ecto.Adapters.SQL.Sandbox
 
   using do
     quote do
@@ -26,10 +27,10 @@ defmodule UnstoreWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Unstore.Repo)
+    :ok = Sandbox.checkout(Unstore.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Unstore.Repo, {:shared, self()})
+      Sandbox.mode(Unstore.Repo, {:shared, self()})
     end
 
     :ok

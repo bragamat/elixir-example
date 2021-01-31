@@ -1,4 +1,7 @@
 defmodule Unstore.Products.Product do
+  @moduledoc """
+  Module containing the Product Changeset and struct
+  """
   use Ecto.Schema
   import Ecto.Changeset
 

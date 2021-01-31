@@ -1,17 +1,14 @@
 defmodule Unstore.ProductsTest do
   use Unstore.DataCase
 
+  alias Unstore.Fixtures.Products, as: ProductsMock
   alias Unstore.Products
   alias Unstore.Products.Product
-  alias Unstore.Fixtures.Products, as: ProductsMock
 
   describe "products" do
 
-    @update_attrs %{
-      name: "new product"
-    }
+    @update_attrs %{name: "new product"}
     @invalid_attrs %{name: nil, price: "invalid price"}
-
 
     test "list_product/0 returns all product" do
       {:ok, product} = ProductsMock.create_product()
