@@ -8,4 +8,5 @@ defmodule UnstoreWeb.Router do
   scope "/api", UnstoreWeb do
     pipe_through :api
   end
+
 end
